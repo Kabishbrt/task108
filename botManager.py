@@ -1,5 +1,3 @@
-# botManager.py
-
 from bots import tokens
 
 class BotManager:
@@ -7,7 +5,7 @@ class BotManager:
         """
         Initialize the BotManager using bot data from bots.py.
         """
-        self.bot_data = tokens  # Load tokens directly from bots.py
+        self.bot_data = tokens  # Load tokens 
         self.last_used_index = 0
         self.request_count = 0  # Track the number of requests
 
@@ -20,7 +18,7 @@ class BotManager:
             print("No bots available in bot data.")
             return None, None, None, None
 
-        # Check if we should switch the bot (after 2 requests)
+        # switch the bot (after 2 requests)
         if self.request_count >= 2:
             self.last_used_index = (self.last_used_index + 1) % len(self.bot_data)
             self.request_count = 0  # Reset request count after switching bot
@@ -31,7 +29,6 @@ class BotManager:
         cookie = bot_info["cookie"]
         useragent = bot_info["user-agent"]
 
-        # Print which bot is in use
         print(f"Using bot: {bot_name}")
 
         # Increment the request count
