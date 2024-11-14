@@ -11,7 +11,7 @@ class BotManager:
 
     def get_next_bot(self):
         """
-        Switch to the next bot in a round-robin fashion after every 3 requests.
+        Switch to the next bot in a round-robin fashion after every 2 requests.
         Returns the bot's name, CSRF token, cookie, and user-agent.
         """
         if not self.bot_data:
